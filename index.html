@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfolio comptabilité et finance pour PME - Mohamed El Fajri. Accompagnement comptable, gestion financière et conseil pour entreprises."
+    />
+    <meta
+      name="keywords"
+      content="comptabilité, finance, PME, gestion, conseil, Mohamed El Fajri"
+    />
+    <meta name="theme-color" content="#3b3fb5" />
+    <title>Mohamed El Fajri | Comptabilité & Finance</title>
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png" />
+    <style>
+      :root {
+        --primary: #3b3fb5;
+        --primary-dark: #2b2f8c;
+        --primary-soft: #eef1ff;
+        --secondary: #0f172a;
+        --text: #1f2937;
+        --muted: #64748b;
+        --light: #f8fafc;
+        --border: #e2e8f0;
+        --success: #10b981;
+        --warning: #f59e0b;
+        --shadow: 0 18px 42px rgba(15, 23, 42, 0.10);
+        --radius: 18px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        color: var(--text);
+        background: #ffffff;
+        line-height: 1.6;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      ul {
+        padding-left: 0;
+        list-style: none;
+      }
+
+      .container {
+        width: min(1120px, calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      .section {
+        padding: 90px 0;
+      }
+
+      .section-title {
+        margin: 0 0 16px;
+        font-size: clamp(2rem, 4vw, 3rem);
+        line-height: 1.1;
+        color: var(--secondary);
+      }
+
+      .section-subtitle {
+        max-width: 650px;
+        margin: 0 auto 32px;
+        color: var(--muted);
+        font-size: 1.05rem;
+      }
+
+      .eyebrow {
+        display: inline-block;
+        margin-bottom: 14px;
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--primary);
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 52px;
+        padding: 0 24px;
+        border-radius: 12px;
+        font-weight: 700;
+        transition: 0.25s ease;
+        border: 1px solid transparent;
+        cursor: pointer;
+      }
+
+      .btn-primary {
+        background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+        color: #fff;
+        box-shadow: var(--shadow);
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 22px 48px rgba(59, 63, 181, 0.28);
+      }
+
+      .btn-secondary {
+        background: #fff;
+        color: var(--secondary);
+        border-color: var(--border);
+      }
+
+      .btn-secondary:hover {
+        background: var(--light);
+      }
+
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: rgba(255, 255, 255, 0.92);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(226, 232, 240, 0.9);
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 78px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 800;
+        color: var(--secondary);
+        font-size: 1.05rem;
+      }
+
+      .brand-mark {
+        width: 42px;
+        height: 42px;
+        display: grid;
+        place-items: center;
+        border-radius: 12px;
+        background: linear-gradient(135deg, var(--primary), #6671ff);
+        color: white;
+        font-weight: 900;
+        box-shadow: var(--shadow);
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 28px;
+        color: var(--muted);
+        font-weight: 600;
+      }
+
+      .nav-links a {
+        transition: 0.2s ease;
+      }
+
+      .nav-links a:hover {
+        color: var(--primary);
+      }
+
+      .nav-cta {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .menu-toggle {
+        display: none;
+      }
+
+      .hero {
+        position: relative;
+        overflow: hidden;
+        background:
+          radial-gradient(circle at top left, rgba(91, 105, 255, 0.12), transparent 30%),
+          linear-gradient(135deg, #f8faff 0%, #ffffff 60%, #f6f7ff 100%);
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        align-items: center;
+        gap: 42px;
+        padding: 70px 0 50px;
+      }
+
+      .hero-content h1 {
+        margin: 0 0 18px;
+        font-size: clamp(2.4rem, 5vw, 4.4rem);
+        line-height: 1.06;
+        letter-spacing: -0.04em;
+        color: var(--secondary);
+      }
+
+      .hero-content p {
+        margin: 0 0 28px;
+        color: var(--muted);
+        font-size: 1.08rem;
+        max-width: 620px;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        margin-bottom: 28px;
+      }
+
+      .mini-stats {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 22px;
+      }
+
+      .mini-stat {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .mini-stat strong {
+        font-size: 1.5rem;
+        color: var(--secondary);
+      }
+
+      .mini-stat span {
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      .hero-visual {
+        position: relative;
+      }
+
+      .dashboard-card {
+        position: relative;
+        background: linear-gradient(180deg, #ffffff 0%, #f9faff 100%);
+        border: 1px solid rgba(226, 232, 240, 0.9);
+        border-radius: 28px;
+        box-shadow: var(--shadow);
+        padding: 24px;
+      }
+
+      .dashboard-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 24px;
+      }
+
+      .dot-group {
+        display: flex;
+        gap: 8px;
+      }
+
+      .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+      }
+
+      .dot.red { background: #ff6b6b; }
+      .dot.yellow { background: #fbbf24; }
+      .dot.green { background: #34d399; }
+
+      .stat-large {
+        font-size: 2.2rem;
+        font-weight: 800;
+        color: var(--secondary);
+        margin: 0 0 10px;
+      }
+
+      .trend {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 8px 12px;
+        border-radius: 999px;
+        font-weight: 700;
+        color: #0f766e;
+        background: rgba(16, 185, 129, 0.12);
+      }
+
+      .chart-bars {
+        display: flex;
+        align-items: end;
+        gap: 12px;
+        height: 100px;
+        margin-top: 26px;
+        padding-top: 12px;
+      }
+
+      .chart-bars span {
+        flex: 1;
+        border-radius: 10px 10px 0 0;
+        background: linear-gradient(180deg, #7c8dff, var(--primary));
+      }
+
+      .chart-bars span:nth-child(1) { height: 35%; }
+      .chart-bars span:nth-child(2) { height: 55%; }
+      .chart-bars span:nth-child(3) { height: 75%; }
+      .chart-bars span:nth-child(4) { height: 62%; }
+      .chart-bars span:nth-child(5) { height: 92%; }
+      .chart-bars span:nth-child(6) { height: 80%; }
+
+      .floating-card {
+        position: absolute;
+        right: -14px;
+        bottom: -18px;
+        width: 210px;
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        box-shadow: var(--shadow);
+        padding: 16px 18px;
+      }
+
+      .floating-card small {
+        display: block;
+        color: var(--muted);
+        margin-bottom: 8px;
+      }
+
+      .floating-card strong {
+        display: block;
+        font-size: 1.5rem;
+        color: var(--secondary);
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(220px, 1fr));
+        gap: 22px;
+        margin-top: 24px;
+      }
+
+      .stat-box {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        box-shadow: 0 12px 30px rgba(15, 23, 42, 0.04);
+        padding: 28px 22px;
+      }
+
+      .stat-box .value {
+        display: block;
+        font-size: 2rem;
+        font-weight: 800;
+        color: var(--secondary);
+      }
+
+      .stat-box .label {
+        color: var(--muted);
+        margin-top: 8px;
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(260px, 1fr));
+        gap: 24px;
+      }
+
+      .service-card {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 28px 22px;
+        box-shadow: 0 8px 22px rgba(15, 23, 42, 0.03);
+        transition: 0.25s ease;
+      }
+
+      .service-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 18px 38px rgba(15, 23, 42, 0.08);
+      }
+
+      .service-icon {
+        width: 58px;
+        height: 58px;
+        border-radius: 16px;
+        display: grid;
+        place-items: center;
+        background: var(--primary-soft);
+        color: var(--primary);
+        font-size: 1.7rem;
+        margin-bottom: 18px;
+      }
+
+      .service-card h3 {
+        margin: 0 0 12px;
+        font-size: 1.35rem;
+        color: var(--secondary);
+      }
+
+      .service-card p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .about-grid {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 28px;
+        align-items: center;
+      }
+
+      .about-panel {
+        background: linear-gradient(180deg, #ffffff 0%, #f8faff 100%);
+        border: 1px solid var(--border);
+        border-radius: 28px;
+        padding: 28px;
+        box-shadow: var(--shadow);
+      }
+
+      .about-list {
+        display: grid;
+        gap: 18px;
+        margin-top: 26px;
+      }
+
+      .about-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 14px;
+      }
+
+      .check {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        background: rgba(16, 185, 129, 0.12);
+        color: var(--success);
+        font-weight: 800;
+      }
+
+      .about-item h4 {
+        margin: 0 0 6px;
+        font-size: 1.08rem;
+        color: var(--secondary);
+      }
+
+      .about-item p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .process-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(220px, 1fr));
+        gap: 20px;
+      }
+
+      .process-card {
+        position: relative;
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 24px 20px;
+        box-shadow: 0 10px 24px rgba(15, 23, 42, 0.04);
+      }
+
+      .process-step {
+        display: inline-grid;
+        place-items: center;
+        width: 46px;
+        height: 46px;
+        border-radius: 12px;
+        margin-bottom: 20px;
+        font-weight: 800;
+        color: var(--primary);
+        background: var(--primary-soft);
+      }
+
+      .process-card h3 {
+        margin: 0 0 10px;
+        font-size: 1.15rem;
+        color: var(--secondary);
+      }
+
+      .process-card p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .features {
+        background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+        color: #fff;
+      }
+
+      .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(220px, 1fr));
+        gap: 20px;
+      }
+
+      .feature-card {
+        background: rgba(255,255,255,0.04);
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: var(--radius);
+        padding: 26px 22px;
+      }
+
+      .feature-card h3 {
+        margin: 0 0 10px;
+        font-size: 1.15rem;
+      }
+
+      .feature-card p {
+        margin: 0;
+        color: rgba(255,255,255,0.7);
+      }
+
+      .testimonials {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(220px, 1fr));
+        gap: 22px;
+      }
+
+      .testimonial {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 28px 22px;
+        box-shadow: 0 10px 26px rgba(15, 23, 42, 0.04);
+      }
+
+      .stars {
+        color: #fbbf24;
+        margin-bottom: 14px;
+        font-size: 1.1rem;
+      }
+
+      .testimonial p {
+        margin: 0 0 18px;
+        color: var(--muted);
+      }
+
+      .testimonial strong {
+        display: block;
+        color: var(--secondary);
+      }
+
+      .testimonial span {
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      .cta-box {
+        background: linear-gradient(135deg, #eef1ff 0%, #f9fbff 100%);
+        border: 1px solid var(--border);
+        border-radius: 28px;
+        padding: 36px 28px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        box-shadow: var(--shadow);
+      }
+
+      .cta-box h3 {
+        margin: 0 0 6px;
+        font-size: clamp(1.7rem, 3vw, 2.4rem);
+        color: var(--secondary);
+      }
+
+      .cta-box p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 28px;
+      }
+
+      .contact-card,
+      .form-card {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 28px 22px;
+        box-shadow: 0 12px 30px rgba(15, 23, 42, 0.04);
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 14px;
+        margin-bottom: 22px;
+      }
+
+      .contact-icon {
+        width: 42px;
+        height: 42px;
+        display: grid;
+        place-items: center;
+        border-radius: 12px;
+        background: var(--primary-soft);
+        color: var(--primary);
+        font-weight: 800;
+      }
+
+      .contact-item h4 {
+        margin: 0 0 4px;
+        color: var(--secondary);
+      }
+
+      .contact-item p,
+      .contact-item a {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      form {
+        display: grid;
+        gap: 16px;
+      }
+
+      .field {
+        display: grid;
+        gap: 8px;
+      }
+
+      .field label {
+        font-weight: 700;
+        color: var(--secondary);
+      }
+
+      .field input,
+      .field textarea {
+        width: 100%;
+        min-height: 52px;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 0 14px;
+        font: inherit;
+        color: var(--secondary);
+        background: #fff;
+      }
+
+      .field textarea {
+        min-height: 140px;
+        padding-top: 14px;
+        resize: vertical;
+      }
+
+      .footer {
+        padding: 26px 0 40px;
+        background: #0f172a;
+        color: rgba(255,255,255,0.8);
+      }
+
+      .footer-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      .socials {
+        display: flex;
+        gap: 12px;
+      }
+
+      .socials a {
+        display: inline-grid;
+        place-items: center;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.06);
+        color: #fff;
+        font-weight: 700;
+      }
+
+      @media (max-width: 960px) {
+        .hero-grid,
+        .about-grid,
+        .contact-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .services-grid,
+        .stats-grid,
+        .feature-grid,
+        .testimonials,
+        .process-grid {
+          grid-template-columns: repeat(2, minmax(220px, 1fr));
+        }
+
+        .cta-box {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+
+      @media (max-width: 720px) {
+        .nav-links {
+          position: absolute;
+          top: 78px;
+          left: 0;
+          right: 0;
+          display: none;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 18px;
+          background: rgba(255,255,255,0.96);
+          padding: 20px 16px 30px;
+          border-bottom: 1px solid var(--border);
+        }
+
+        .nav-links.active {
+          display: flex;
+        }
+
+        .menu-toggle {
+          display: inline-flex;
+          width: 42px;
+          height: 42px;
+          border-radius: 10px;
+          border: 1px solid var(--border);
+          background: #fff;
+          align-items: center;
+          justify-content: center;
+          font-size: 1.5rem;
+          cursor: pointer;
+        }
+
+        .nav-cta .btn {
+          display: none;
+        }
+
+        .services-grid,
+        .stats-grid,
+        .feature-grid,
+        .testimonials,
+        .process-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .section {
+          padding: 72px 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav">
+        <a href="#top" class="brand" aria-label="Accueil">
+          <span class="brand-mark">ME</span>
+          <span>Mohamed El Fajri</span>
+        </a>
+
+        <nav class="nav-links" id="navLinks">
+          <a href="#services">Services</a>
+          <a href="#about">À propos</a>
+          <a href="#process">Méthode</a>
+          <a href="#temoignages">Témoignages</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="nav-cta">
+          <button class="menu-toggle" id="menuToggle" aria-label="Menu mobile">☰</button>
+          <a href="#contact" class="btn btn-primary">Demander un devis</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-content">
+            <span class="eyebrow">Comptabilité & Finance</span>
+            <h1>Je vous aide à piloter votre PME avec clarté.</h1>
+            <p>
+              Vous gérez une entreprise et vous avez besoin d’un accompagnement fiable
+              pour la comptabilité, la gestion financière, les performances et la
+              prise de décision. Je vous apporte un suivi sérieux, clair et adapté à
+              votre activité.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#services" class="btn btn-primary">Découvrir mes services</a>
+              <a href="#contact" class="btn btn-secondary">Parler de votre projet</a>
+            </div>
+
+            <div class="mini-stats">
+              <div class="mini-stat">
+                <strong>+10 ans</strong>
+                <span>d’expérience</span>
+              </div>
+              <div class="mini-stat">
+                <strong>120+</strong>
+                <span>PME accompagnées</span>
+              </div>
+              <div class="mini-stat">
+                <strong>100%</strong>
+                <span>suivi personnalisé</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-visual" aria-label="Tableau financier">
+            <div class="dashboard-card">
+              <div class="dashboard-top">
+                <div class="dot-group">
+                  <span class="dot red"></span>
+                  <span class="dot yellow"></span>
+                  <span class="dot green"></span>
+                </div>
+                <span class="trend">+18,4% / trimestre</span>
+              </div>
+
+              <div class="stat-large">€ 184 250</div>
+              <div style="color: var(--muted); font-weight: 600;">Performance financière</div>
+
+              <div class="chart-bars" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+
+            <div class="floating-card">
+              <small>Cash-flow</small>
+              <strong>€ 42.8k</strong>
+              <div style="color: var(--success); font-weight: 700; margin-top: 6px;">↗ en hausse</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="stats-grid">
+            <div class="stat-box">
+              <span class="value">98%</span>
+              <div class="label">clients satisfaits</div>
+            </div>
+            <div class="stat-box">
+              <span class="value">24/7</span>
+              <div class="label">suivi et réponse rapide</div>
+            </div>
+            <div class="stat-box">
+              <span class="value">3x</span>
+              <div class="label">plus de visibilité financière</div>
+            </div>
+            <div class="stat-box">
+              <span class="value">0</span>
+              <div class="label">gestion sans clarté</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="section">
+        <div class="container">
+          <div style="text-align: center;">
+            <span class="eyebrow">Mes services</span>
+            <h2 class="section-title">Des solutions comptables et financières pensées pour les PME</h2>
+            <p class="section-subtitle">
+              J’accompagne les entreprises qui veulent mieux piloter leur activité,
+              sécuriser leur gestion et prendre des décisions plus justes.
+            </p>
+          </div>
+
+          <div class="services-grid">
+            <article class="service-card">
+              <div class="service-icon">📊</div>
+              <h3>Comptabilité générale</h3>
+              <p>
+                Tenue de comptes, suivi des mouvements, gestion des écritures, clôture
+                comptable et préparation des états financiers.
+              </p>
+            </article>
+
+            <article class="service-card">
+              <div class="service-icon">💰</div>
+              <h3>Gestion financière</h3>
+              <p>
+                Analyse de trésorerie, suivi des dépenses, pilotage du budget et
+                optimisation des flux de paiement.
+              </p>
+            </article>
+
+            <article class="service-card">
+              <div class="service-icon">📈</div>
+              <h3>Tableau de bord</h3>
+              <p>
+                Suivi des performances, indicateurs clés et reporting financier
+                clair pour mieux piloter votre activité.
+              </p>
+            </article>
+
+            <article class="service-card">
+              <div class="service-icon">🧾</div>
+              <h3>Facturation & TVA</h3>
+              <p>
+                Mise en place des factures, suivi des paiements, gestion de la TVA et
+                contrôle des flux administratifs.
+              </p>
+            </article>
+
+            <article class="service-card">
+              <div class="service-icon">🏢</div>
+              <h3>Conseil PME</h3>
+              <p>
+                Accompagnement stratégique pour améliorer votre rentabilité, votre
+                structure de gestion et votre pilotage.
+              </p>
+            </article>
+
+            <article class="service-card">
+              <div class="service-icon">🔐</div>
+              <h3>Conformité & contrôle</h3>
+              <p>
+                Assistance sur les aspects réglementaires, contrôle interne et
+                organisation de la gestion comptable.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section">
+        <div class="container">
+          <div class="about-grid">
+            <div class="about-panel">
+              <span class="eyebrow">À propos</span>
+              <h2 class="section-title" style="margin-bottom: 16px;">Un accompagnement clair, sérieux et orienté résultats.</h2>
+              <p style="margin: 0; color: var(--muted);">
+                Je mets mon expertise au service des entreprises qui veulent gagner
+                en visibilité, maîtriser leur gestion et mieux piloter leur développement.
+                Mon approche est humaine, structurée et adaptée à chaque contexte.
+              </p>
+            </div>
+
+            <div class="about-panel">
+              <div class="about-list">
+                <div class="about-item">
+                  <div class="check">✓</div>
+                  <div>
+                    <h4>Un accompagnement personnalisé</h4>
+                    <p>Chaque entreprise a sa propre réalité, ses enjeux et son rythme de développement.</p>
+                  </div>
+                </div>
+
+                <div class="about-item">
+                  <div class="check">✓</div>
+                  <div>
+                    <h4>Une gestion maîtrisée</h4>
+                    <p>Je vous aide à organiser vos données comptables et financières de manière fiable.</p>
+                  </div>
+                </div>
+
+                <div class="about-item">
+                  <div class="check">✓</div>
+                  <div>
+                    <h4>Des décisions basées sur des chiffres</h4>
+                    <p>Le pilotage de votre activité doit reposer sur des informations claires et exploitable.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="process" class="section">
+        <div class="container">
+          <div style="text-align: center;">
+            <span class="eyebrow">Méthode de travail</span>
+            <h2 class="section-title">Une démarche simple et efficace</h2>
+          </div>*
+
